@@ -17,7 +17,9 @@ const StyledTile = styled.TouchableOpacity`
   justify-content: space-between;
   align-items: center;
 `;
-const InfoContainer = styled.View``;
+const InfoContainer = styled.View`
+  width: 90%;
+`;
 const Title = styled.Text`
   font-size: 16px;
   color: ${colors.text};

@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import ProblemType from "../../domain/ProblemType/ProblemType";
+import { problemTypes } from "../../utils/devConstants";
 
 type ProblemTypeState = {
   selectedProblemType: ProblemType;
+  problemTypes: ProblemType[];
 };
 
 const initialState = {
@@ -11,6 +13,7 @@ const initialState = {
     description: "",
     id: "",
   },
+  problemTypes: problemTypes,
 };
 
 const problemTypeSlice = createSlice({

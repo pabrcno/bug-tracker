@@ -29,7 +29,7 @@ const SuccessMessage = () => (
     <SizedBox height="20px" />
     <Title>Success!</Title>
     <SizedBox height="10px" />
-    <Message>Your order has been placed!</Message>
+    <Message>Your will get an answer on your email soon!</Message>
   </Body>
 );
 
