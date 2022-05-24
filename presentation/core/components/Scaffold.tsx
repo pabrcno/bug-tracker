@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import View from "../../../domain/View/view";
 import { colors } from "../constants";
 
 import SizedBox from "./SizedBox";
@@ -38,15 +39,7 @@ const ButtonContainer = styled.View`
   border-top-width: 1px;
 `;
 
-//TODO: Ask for more specific types for this component
-type Props = {
-  body: React.ReactNode;
-  title: string;
-  actionButton: React.ReactNode;
-  navIconButton: React.ReactNode;
-};
-
-const Scaffold = ({ body, title, actionButton, navIconButton }: Props) => {
+const Scaffold = ({ body, title, actionButton, navIconButton }: View) => {
   return (
     <Background
       source={require("../../../assets/background.png")}
