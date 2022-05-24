@@ -1,12 +1,9 @@
 import styled from "styled-components/native";
 import { colors } from "../../core/constants";
 import { AntDesign } from "@expo/vector-icons";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../../application/hooks/redux/hooks";
-import { setView } from "../../../application/features/view";
-import problemTypeView from "../../ProblemTypeView/ProblemTypeView";
+import { useAppSelector } from "../../../application/hooks/redux/hooks";
+import useToProblemTypeSelection from "../../../application/hooks/useToProblemTypeSelection";
+
 const StyledButton = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
@@ -27,10 +24,7 @@ const ProblemTypeButton = () => {
   const problemTypeTitle = useAppSelector(
     (state) => state.problemType.selectedProblemType.title
   );
-  const dispatch = useAppDispatch();
-  const handleOnPress = () => {
-    dispatch(setView(problemTypeView));
-  };
+  const handleOnPress = useToProblemTypeSelection();
   return (
     <StyledButton onPress={handleOnPress}>
       <StyledText>{problemTypeTitle || "Problem Type"}</StyledText>

@@ -1,21 +1,8 @@
 import { NavIconButton } from "../../core/components";
-import { useAppDispatch } from "../../../application/hooks/redux/hooks";
-import { setView } from "../../../application/features/view";
-import newProblemView from "../../NewProblemView";
-import { setSelectedProblemType } from "../../../application/features/problemType";
+import useBackAndCleanProblemType from "../../../application/hooks/useBackAndCleanProblemType";
 
 const ProblemTypeBackButton = () => {
-  const dispatch = useAppDispatch();
-  const handlePress = () => {
-    dispatch(
-      setSelectedProblemType({
-        id: "",
-        title: "",
-        description: "",
-      })
-    );
-    dispatch(setView(newProblemView));
-  };
+  const handlePress = useBackAndCleanProblemType();
   return <NavIconButton icon="arrowleft" onPress={handlePress} />;
 };
 export default ProblemTypeBackButton;

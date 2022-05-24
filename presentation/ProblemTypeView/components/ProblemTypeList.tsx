@@ -1,11 +1,9 @@
 import { FlatList } from "react-native";
-import { setSelectedProblemType } from "../../../application/features/problemType";
-import {
-  useAppDispatch,
-  useAppSelector,
-} from "../../../application/hooks/redux/hooks";
+import { useAppSelector } from "../../../application/hooks/redux/hooks";
+import useSetProblemType from "../../../application/hooks/useSetProblemType";
 import ProblemType from "../../../domain/ProblemType/ProblemType";
 import ProblemTypeTile from "./ProblemTypeTile";
+
 const problemtypes: ProblemType[] = [
   {
     id: "1",
@@ -49,7 +47,7 @@ const ProblemTypeList = () => {
   const selectedProblemType = useAppSelector(
     (state) => state.problemType.selectedProblemType
   );
-  const dispatch = useAppDispatch();
+  const handleTap = useSetProblemType();
   return (
     <FlatList
       data={problemtypes}
@@ -57,9 +55,7 @@ const ProblemTypeList = () => {
         <ProblemTypeTile
           key={item.id}
           problemType={item}
-          onTap={() => {
-            dispatch(setSelectedProblemType(item));
-          }}
+          onTap={() => handleTap(item)}
           isSelected={selectedProblemType.id === item.id}
         />
       )}

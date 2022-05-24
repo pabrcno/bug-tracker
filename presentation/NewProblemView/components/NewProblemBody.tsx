@@ -2,6 +2,8 @@ import ProblemTypeButton from "./ProblemTypeButton";
 import { AppTextInput, SizedBox } from "../../core/components";
 import { View } from "react-native";
 import CheckRow from "./CheckRow";
+import DescriptionInput from "./DescriptionInput";
+import EmailInput from "./EmailInput";
 
 const componentsSeparation = "18px";
 
@@ -10,14 +12,9 @@ const NewProblemBody = () => {
     <View>
       <ProblemTypeButton />
       <SizedBox height={componentsSeparation} />
-      <AppTextInput placeholder="Your Email" />
+      <EmailInput />
       <SizedBox height={componentsSeparation} />
-      <AppTextInput
-        placeholder="Problem Description"
-        multiline
-        numberOfLines={4}
-        style={{ padding: 100 }}
-      />
+      <DescriptionInput />
       <SizedBox height={componentsSeparation} />
       <CheckRow />
     </View>

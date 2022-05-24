@@ -1,13 +1,8 @@
 import { ActionButton } from "../../core/components";
-import { useAppDispatch } from "../../../application/hooks/redux/hooks";
-import { setView } from "../../../application/features/view";
-import newProblemView from "../../NewProblemView";
+import useHandleBackToNew from "../../../application/hooks/useHandleBackToNew";
 
 const ProblemTypeActionButton = () => {
-  const dispatch = useAppDispatch();
-  const handlePress = () => {
-    dispatch(setView(newProblemView));
-  };
+  const handlePress = useHandleBackToNew();
   return <ActionButton text="Choose" onPress={handlePress} />;
 };
 export default ProblemTypeActionButton;
