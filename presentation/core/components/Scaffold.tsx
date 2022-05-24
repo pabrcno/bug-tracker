@@ -8,9 +8,9 @@ const Container = styled.View`
   border-radius: 6px 6px 0px 0px;
   width: 98%;
   height: 96%;
-  justify-content: space-between;
   padding-horizontal: 16px;
   padding-vertical: 20px;
+  flex-direction: column;
 `;
 
 const Header = styled.View`
@@ -66,10 +66,10 @@ const Scaffold = ({ body, title, actionButton, navIconButton }: Props) => {
         </>
       </Header>
       <Container>
-        <>
+        <SizedBox height="80%" width="100%">
           {body}
-          <ButtonContainer>{actionButton}</ButtonContainer>
-        </>
+        </SizedBox>
+        <ButtonContainer>{actionButton}</ButtonContainer>
       </Container>
     </Background>
   );

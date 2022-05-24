@@ -1,17 +1,6 @@
-import {
-  ActionButton,
-  AppTextInput,
-  NavIconButton,
-  Scaffold,
-} from "./presentation/core/components";
-
+import { Scaffold } from "./presentation/core/components";
+import newProblemView from "./presentation/NewProblemView";
 export default function App() {
-  return (
-    <Scaffold
-      navIconButton={<NavIconButton onPress={() => {}} icon={"arrowleft"} />}
-      title={"Hello world Hello world"}
-      body={<AppTextInput />}
-      actionButton={<ActionButton onPress={() => {}} text={"Login"} />}
-    />
-  );
+  const view = newProblemView;
+  return <Scaffold {...view} />;
 }
