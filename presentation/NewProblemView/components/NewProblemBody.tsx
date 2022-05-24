@@ -1,5 +1,5 @@
 import ProblemTypeButton from "./ProblemTypeButton";
-import { AppTextInput, SizedBox } from "../../core/components";
+import { SizedBox } from "../../core/components";
 import { View } from "react-native";
 import CheckRow from "./CheckRow";
 import DescriptionInput from "./DescriptionInput";
