@@ -11,9 +11,11 @@ const DescriptionInput = () => {
     <AppTextInput
       placeholder="Problem Description"
       multiline
-      numberOfLines={4}
-      style={{ padding: 100 }}
+      numberOfLines={20}
       defaultValue={description}
+      style={{
+        minHeight: 200,
+      }}
       onChangeText={(value: string) => handleChange(value)}
     />
   );
