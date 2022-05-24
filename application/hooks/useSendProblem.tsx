@@ -1,8 +1,12 @@
 import { useSelector } from "react-redux";
+import { setView } from "../features/view";
 import { RootState } from "../store";
+import { useAppDispatch } from "./redux/hooks";
+import successView from "../../presentation/SuccessView";
 
 const useSendProblem = () => {
   const newProblem = useSelector((state: RootState) => state.newProblem);
+  const dispatch = useAppDispatch();
   const handleSendProblem = () => {
     const isCompleted =
       newProblem.newProblem.issuerEmail &&
@@ -12,8 +16,9 @@ const useSendProblem = () => {
       newProblem.isSendCheckbox;
     if (isCompleted) {
       console.log("Send problem");
+      dispatch(setView(successView));
     } else {
-      console.log("cannot problem");
+      console.error("cannot send problem");
     }
   };
   return handleSendProblem;

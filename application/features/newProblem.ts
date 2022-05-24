@@ -39,6 +39,7 @@ const newProblemSlice = createSlice({
     toggleCheckbox: (state: NewProblemState) => {
       state.isSendCheckbox = !state.isSendCheckbox;
     },
+    reset: () => initialState,
   },
 });
 
@@ -47,6 +48,7 @@ export const {
   setDescription,
   setProblemType,
   toggleCheckbox,
+  reset,
 } = newProblemSlice.actions;
 
 export default newProblemSlice.reducer;

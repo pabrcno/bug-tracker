@@ -16,9 +16,10 @@ const challengesSlice = createSlice({
     setView: (state: ViewState, action: PayloadAction<View>) => {
       state.view = action.payload;
     },
+    reset: () => initialState,
   },
 });
 
-export const { setView } = challengesSlice.actions;
+export const { setView, reset } = challengesSlice.actions;
 
 export default challengesSlice.reducer;

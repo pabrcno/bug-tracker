@@ -23,9 +23,10 @@ const problemTypeSlice = createSlice({
     ) => {
       state.selectedProblemType = action.payload;
     },
+    reset: () => initialState,
   },
 });
 
-export const { setSelectedProblemType } = problemTypeSlice.actions;
+export const { setSelectedProblemType, reset } = problemTypeSlice.actions;
 
 export default problemTypeSlice.reducer;
