@@ -1,12 +1,11 @@
 import View from "../../domain/View/view";
-import newProblemView from "../../presentation/NewProblemView";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type ViewState = {
-  view: View;
+  view: View | null;
 };
 
 const initialState: ViewState = {
-  view: newProblemView,
+  view: null,
 };
 
 const challengesSlice = createSlice({

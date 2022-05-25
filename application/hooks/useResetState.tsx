@@ -1,7 +1,6 @@
-import newProblemView from "../../presentation/NewProblemView";
 import { reset as resetNp } from "../features/newProblem";
 import { reset as resetPt } from "../features/problemType";
-import { reset as resetView, setView } from "../features/view";
+import { reset as resetView } from "../features/view";
 import { useAppDispatch } from "./redux/hooks";
 
 const useResetState = () => {
@@ -9,7 +8,7 @@ const useResetState = () => {
 
   const resetState = () => {
     dispatch(resetPt());
-    dispatch(setView(newProblemView));
+    dispatch(resetView());
     dispatch(resetNp());
   };
 

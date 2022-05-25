@@ -15,7 +15,6 @@ const useSendProblem = () => {
       newProblem.newProblem.problemType.id &&
       newProblem.isSendCheckbox;
     if (isCompleted) {
-      console.log("Send problem");
       dispatch(setView(successView));
     } else {
       console.error("cannot send problem");
