@@ -6,7 +6,7 @@ import SizedBox from "./SizedBox";
 
 const Container = styled.View`
   background-color: ${colors.background};
-  border-radius: 6px 6px 0px 0px;
+  border-radius: 6px;
   width: 98%;
   height: 96%;
   padding-horizontal: 16px;
